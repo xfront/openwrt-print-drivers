@@ -1,0 +1,33 @@
+From 29e0b7a893180f009c76a6e35a49d36a327ecc38 Mon Sep 17 00:00:00 2001
+From: itfront <itfront@126.com>
+Date: Mon, 6 Jun 2022 18:18:00 +0800
+Subject: [PATCH] part build
+
+---
+ Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 3b0090c..827c1a3 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,6 +1,6 @@
+ _prefix=/usr
+ 
+-dirs= cngplp buftool backend #cpca
++dirs= buftool backend #cpca
+ scripts=for dir in $(dirs); do\
+ 				(cd $$dir; make $$target)|| exit 1;\
+ 		done
+@@ -21,7 +21,7 @@ uninstall :
+ 	target=$@; $(scripts)
+ 
+ gen :
+-	(cd cngplp; ./autogen.sh; make) || exit 1
++#	(cd cngplp; ./autogen.sh; make) || exit 1
+ 	(cd buftool; ./autogen.sh; make) || exit 1
+ 	(cd backend; ./autogen.sh --prefix=${_prefix}; make) || exit 1
+ #	(cd cpca; ./autogen.sh --prefix=${_prefix}; make) || exit 1
+-- 
+2.30.2
+

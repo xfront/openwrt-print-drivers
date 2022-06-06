@@ -1,0 +1,27 @@
+From 5b64f4add6699b13aa06a7f483b30ab141818df5 Mon Sep 17 00:00:00 2001
+From: itfront <itfront@126.com>
+Date: Mon, 6 Jun 2022 15:54:01 +0800
+Subject: [PATCH] skip ui build
+
+---
+ Makefile | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 00963fa..c5451c5 100644
+--- a/Makefile
++++ b/Makefile
+@@ -18,9 +18,7 @@ SRCDIRS =\
+ 	$(FILTERDIR)\
+ 	$(FILTERDIR2)\
+ 	$(FILTERDIR3)\
+-	$(STATUSDIR)\
+-	$(PPDDIR)\
+-	$(CNGPLPDIR)
++	$(PPDDIR)
+ 
+ ### Make modules ###
+ all:
+-- 
+2.30.2
+
