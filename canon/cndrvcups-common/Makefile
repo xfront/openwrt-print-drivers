@@ -5,7 +5,7 @@ PKG_VERSION:=3.21
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://codeload.github.com/denji/cpulimit/tar.gz/$(PKG_VERSION)?
+PKG_SOURCE_URL:=https://github.com/xfront/openwrt-print-drivers/raw/master/canon/
 PKG_HASH:=skip
 
 
@@ -25,12 +25,12 @@ define Package/cndrvcups-common
   SUBMENU:=Printing
   SECTION:=drivers
   TITLE:=A free, high-quality and portable font engine
-  URL:=http://www.qpdf.org/
+  URL:=https://www.canon.com.cn/
   DEPENDS:=+libcups +libstdcpp
 
 endef
 
-define Package/cndrvcups-capt/description
+define Package/cndrvcups-common/description
    Little CMS intends to be an OPEN SOURCE small-footprint color management engine,
    with special focus on accuracy and performance.
    It uses the International Color Consortium standard (ICC),
@@ -39,7 +39,7 @@ endef
 
 define Build/Configure
     (cd $(PKG_BUILD_DIR); \
-		$(MAKE) gen
+		$(MAKE) gen \
 	)
 endef
 
@@ -48,18 +48,14 @@ define Build/Compile
 endef
 
 define Build/InstallDev
-	$(INSTALL_DIR) $(1)/usr/share
-	$(CP)  -rf $(PKG_INSTALL_DIR)/usr/share/* $(1)/usr/share/
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) -rf $(PKG_INSTALL_DIR)/usr/lib/* $(1)/usr/lib/
 endef
 
-define Package/cndrvcups-capt/install
-	$(INSTALL_DIR) $(1)/usr/share
-	$(CP)  -rf $(PKG_INSTALL_DIR)/usr/share/* $(1)/usr/share/
+define Package/cndrvcups-common/install
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) -rf $(PKG_INSTALL_DIR)/usr/lib/* $(1)/usr/lib/
 endef
 
-$(eval $(call BuildPackage,cndrvcups-capt))
+$(eval $(call BuildPackage,cndrvcups-common))
 

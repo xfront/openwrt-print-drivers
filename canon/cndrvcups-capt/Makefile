@@ -5,7 +5,7 @@ PKG_VERSION:=2.71
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://codeload.github.com/denji/cpulimit/tar.gz/$(PKG_VERSION)?
+PKG_SOURCE_URL:=https://github.com/xfront/openwrt-print-drivers/raw/master/canon/
 PKG_HASH:=skip
 
 
@@ -25,7 +25,7 @@ define Package/cndrvcups-capt
   SUBMENU:=Printing
   SECTION:=drivers
   TITLE:=A free, high-quality and portable font engine
-  URL:=http://www.qpdf.org/
+  URL:=https://www.canon.com.cn/
   DEPENDS:=+libcups +libstdcpp
 
 endef
